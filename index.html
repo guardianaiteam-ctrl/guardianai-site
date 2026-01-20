@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aegis-GuardianAI | Chiarezza, sicurezza, presenza</title>
-
   <meta name="description" content="Aegis-GuardianAI è un assistente AI human-first progettato per aiutarti a navigare online con più sicurezza, chiarezza e fiducia.">
+
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="./assets/favicon.png">
 
@@ -62,7 +62,7 @@
     }
     .hero{padding-top:76px; text-align:center;}
 
-    /* ===== complex background ===== */
+    /* Background */
     .bgWrap{position:fixed; inset:0; z-index:-5; pointer-events:none; overflow:hidden;}
     .mesh{
       position:absolute; inset:-20%;
@@ -79,15 +79,14 @@
       will-change: transform;
     }
     @keyframes meshShift{
-      0%{transform: translate(calc(var(--mx) * 0.45), calc(var(--my) * 0.45)) scale(1.03) rotate(0deg);}
-      50%{transform: translate(calc(var(--mx) * 0.75), calc(var(--my) * 0.75)) scale(1.10) rotate(2deg);}
-      100%{transform: translate(calc(var(--mx) * 0.45), calc(var(--my) * 0.45)) scale(1.03) rotate(0deg);}
+      0%{transform: translate(calc(var(--mx) * 0.45), calc(var(--my) * 0.45)) scale(1.03);}
+      50%{transform: translate(calc(var(--mx) * 0.75), calc(var(--my) * 0.75)) scale(1.10);}
+      100%{transform: translate(calc(var(--mx) * 0.45), calc(var(--my) * 0.45)) scale(1.03);}
     }
     .orb{
       position:absolute; width:980px; height:980px; border-radius:999px;
       filter: blur(80px) saturate(1.2);
       opacity:0.75;
-      transform: translate3d(0,0,0);
       animation: orbFloat 22s ease-in-out infinite;
       will-change: transform;
     }
@@ -105,14 +104,6 @@
                   radial-gradient(circle at 70% 65%, rgba(106,92,255,0.52), transparent 64%);
       transform: translate(calc(var(--mx) * -0.7), calc(var(--my) * -0.7));
     }
-    .orb.three{
-      left:36%; top:42%;
-      width:760px; height:760px;
-      opacity:0.35;
-      animation-duration:34s;
-      background: radial-gradient(circle at 50% 45%, rgba(255,255,255,0.22), transparent 64%);
-      transform: translate(calc(var(--mx) * 0.35), calc(var(--my) * 0.35));
-    }
     @keyframes orbFloat{
       0%{transform: translate3d(0,0,0) scale(1);}
       50%{transform: translate3d(0,0,0) scale(1.09);}
@@ -121,18 +112,13 @@
     .vignette{
       position:absolute; inset:0;
       background: radial-gradient(circle at 50% 35%, rgba(0,0,0,0.00), rgba(0,0,0,0.26) 70%);
-      opacity:0.7; mix-blend-mode:multiply;
+      opacity:0.7;
     }
     [data-theme="light"] .vignette{
       background: radial-gradient(circle at 50% 35%, rgba(255,255,255,0.00), rgba(0,0,0,0.10) 72%);
-      opacity:0.35; mix-blend-mode:normal;
-    }
-    .noise{
-      position:fixed; inset:0; z-index:-3; pointer-events:none; opacity:0.045;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      opacity:0.35;
     }
 
-    /* ===== NAV ===== */
     header{
       position:sticky; top:0; z-index:1000;
       backdrop-filter:blur(14px);
@@ -163,8 +149,8 @@
     }
     .brand .name{font-weight:980; letter-spacing:0.2px; font-size:18px; line-height:1;}
     .pill{
-      border:1px solid var(--chipBorder);
-      background:var(--chipBg);
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.09);
       border-radius:999px;
       padding:8px 12px;
       font-weight:950;
@@ -188,12 +174,12 @@
       display:inline-block;
     }
     nav a:hover{background:rgba(255,255,255,0.08); transform:translateY(-1px); opacity:1;}
-    nav a.active{background:rgba(255,255,255,0.10); border:1px solid var(--chipBorder); opacity:1;}
+    nav a.active{background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.14); opacity:1;}
     nav a:focus-visible{box-shadow:0 0 0 4px var(--ring);}
 
     .themeBtn{
-      border:1px solid var(--chipBorder);
-      background:var(--chipBg);
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.09);
       color:var(--text);
       border-radius:14px;
       padding:10px 12px;
@@ -210,15 +196,14 @@
     .themeBtn:hover{transform:translateY(-1px);}
     .themeBtn:focus-visible{box-shadow:0 0 0 4px var(--ring);}
 
-    /* ===== HERO ===== */
     .kicker{
       display:inline-block;
       margin-top:12px;
       margin-bottom:18px;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid var(--chipBorder);
-      background:var(--chipBg);
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.09);
       color:var(--muted);
       font-weight:980;
       font-size:12px;
@@ -251,6 +236,7 @@
       font-size:13px;
       min-height:18px;
       letter-spacing:0.2px;
+      transition:opacity .35s ease;
     }
 
     .card{
@@ -259,31 +245,14 @@
       border:1px solid var(--cardBorder);
       box-shadow:0 22px 70px var(--shadow);
       position:relative;
-      transform:translate3d(0,0,0);
       transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
       will-change:transform;
     }
     .hoverFx:hover{
-      transform: translateY(var(--lift));
+      transform: translateY(-8px);
       box-shadow: 0 30px 90px var(--shadow);
       border-color: color-mix(in srgb, var(--accentB) 18%, var(--cardBorder));
     }
-    .hoverFx:active{transform: translateY(calc(var(--lift) + 3px)) scale(var(--press));}
-    .hoverFx::after{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      border-radius:18px;
-      pointer-events:none;
-      opacity:0;
-      transition:opacity .18s ease;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(14,165,233,0.18), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(106,92,255,0.14), transparent 62%);
-      mix-blend-mode:screen;
-    }
-    .hoverFx:hover::after{opacity:1;}
-    .card:focus-within{box-shadow:0 0 0 4px var(--ring), 0 22px 70px var(--shadow);}
 
     .heroRow{
       margin-top:34px;
@@ -297,9 +266,8 @@
       padding:18px 18px 16px;
       max-width:560px;
       justify-self:center;
-      align-self:start;
     }
-    .betaCard h3{margin:0 0 8px; font-size:17px; font-weight:990; letter-spacing:-0.2px;}
+    .betaCard h3{margin:0 0 8px; font-size:17px; font-weight:990;}
     .betaCard p{margin:0 0 12px; color:var(--muted); line-height:1.62; font-weight:760; font-size:14px;}
 
     .emailBox{margin-top:4px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
@@ -307,7 +275,7 @@
       width:220px;
       padding:11px 12px;
       border-radius:12px;
-      border:1px solid var(--chipBorder);
+      border:1px solid rgba(255,255,255,0.14);
       background:var(--inputBg);
       color:var(--text);
       font-weight:750;
@@ -315,12 +283,7 @@
       outline:none;
     }
     .emailBox input[type="text"]{ width:320px; }
-    @media (max-width: 980px){
-      .emailBox input[type="text"]{ width:min(520px, 100%); }
-    }
-    .emailBox input::placeholder{color: color-mix(in srgb, var(--muted2) 78%, transparent);}
     .emailBox input:focus-visible{box-shadow:0 0 0 4px var(--ring);}
-
     .btn{
       border:0;
       padding:11px 14px;
@@ -333,18 +296,11 @@
       min-width:160px;
       white-space:nowrap;
       box-shadow:0 18px 45px color-mix(in srgb, var(--accentB) 28%, transparent);
-      transition:transform .15s ease, filter .15s ease;
-      outline:none;
     }
-    .btn:hover{transform:translateY(-1px); filter:brightness(1.06);}
-    .btn:active{transform:translateY(0) scale(0.985);}
-    .btn:focus-visible{box-shadow:0 0 0 4px var(--ring), 0 18px 45px color-mix(in srgb, var(--accentB) 28%, transparent);}
-
     .subNote{margin-top:8px; color:var(--muted2); font-size:12.5px; font-weight:780;}
 
-    /* Mascot box */
     .mascotWrap{padding:20px 22px 18px; overflow:hidden;}
-    .mascotTitle{font-weight:990; margin:0 0 10px; font-size:16px; letter-spacing:-0.2px;}
+    .mascotTitle{font-weight:990; margin:0 0 10px; font-size:16px;}
     .mascotDesc{margin:0 0 14px; color:var(--muted); line-height:1.6; font-weight:770; font-size:14px;}
     .mascotGlow{
       position:absolute; inset:-40px;
@@ -367,27 +323,19 @@
       user-select:none;
     }
 
-    /* Sections */
-    .sectionTitle{text-align:center; font-size:clamp(26px,3vw,38px); font-weight:990; margin:0; letter-spacing:-0.4px;}
+    .sectionTitle{text-align:center; font-size:clamp(26px,3vw,38px); font-weight:990; margin:0;}
     .sectionLead{text-align:center; max-width:920px; margin:14px auto 0; color:var(--muted); line-height:1.72; font-weight:770;}
     .grid3{margin-top:34px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
     .mini{padding:18px; border-radius:16px; background:var(--card); border:1px solid var(--cardBorder);}
-    .mini h4{margin:0 0 8px; font-weight:990; font-size:16px; letter-spacing:-0.2px;}
+    .mini h4{margin:0 0 8px; font-weight:990; font-size:16px;}
     .mini p{margin:0; color:var(--muted); font-weight:770; line-height:1.65; font-size:14px;}
 
-    .split{margin-top:28px; display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch;}
+    .split{margin-top:28px; display:grid; grid-template-columns:1fr 1fr; gap:16px;}
     .split .card{padding:22px;}
-    .quote{font-weight:990; font-size:18px; letter-spacing:-0.2px; margin:0 0 12px;}
+    .quote{font-weight:990; font-size:18px; margin:0 0 12px;}
     .qText{margin:0; color:var(--muted); line-height:1.75; font-weight:770;}
-    .qBy{margin-top:14px; color:var(--muted2); font-weight:900; font-size:13px;}
 
-    details{background:var(--card); border:1px solid var(--cardBorder); border-radius:16px; padding:14px 16px;}
-    details + details{margin-top:10px;}
-    summary{cursor:pointer; font-weight:980; letter-spacing:-0.15px; outline:none;}
-    summary:focus-visible{box-shadow:0 0 0 4px var(--ring); border-radius:12px;}
-    details p{margin:10px 0 0; color:var(--muted); font-weight:770; line-height:1.7;}
-
-    .joinGrid{margin-top:22px; display:grid; grid-template-columns:1.15fr 0.85fr; gap:16px; align-items:stretch;}
+    .joinGrid{margin-top:22px; display:grid; grid-template-columns:1.15fr 0.85fr; gap:16px;}
     .joinLeft,.joinRight{padding:22px;}
     .miniTrust{
       margin-top:10px;
@@ -403,11 +351,291 @@
 
     footer{padding:60px 18px; max-width:1120px; margin:0 auto; color:var(--muted2); text-align:center; font-weight:770;}
 
-    /* Reveal */
-    .reveal{opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease;}
-    .reveal.in{opacity:1; transform:translateY(0);}
-
-    /* Responsive */
     @media (max-width: 980px){
       .pill{display:none}
-      .heroRow{grid-template
+      .heroRow{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .joinGrid{grid-template-columns:1fr}
+      .emailBox input{width:min(360px,100%)}
+      .emailBox input[type="text"]{width:min(520px,100%)}
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+  <section id="top"></section>
+
+  <div class="bgWrap">
+    <div class="mesh"></div>
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <header>
+    <div class="nav">
+      <a href="#top" class="brand">
+        <img src="./assets/logo.png" alt="Aegis logo">
+        <div class="name">Aegis-GuardianAI</div>
+        <div class="pill">Safe · Human · Clear</div>
+      </a>
+
+      <div class="navRight">
+        <nav>
+          <a href="#how">Come funziona</a>
+          <a href="#security">Sicurezza</a>
+          <a href="#about">Chi siamo</a>
+          <a href="#faq">FAQ</a>
+          <a href="#join">Entra</a>
+        </nav>
+        <button class="themeBtn" id="themeBtn" type="button" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="kicker">La tecnologia dovrebbe proteggerti, non confonderti.</div>
+    <h1>Chiarezza. Sicurezza. Presenza.</h1>
+    <p class="lead">
+      Aegis-GuardianAI è un assistente costruito per farti sentire al sicuro online:
+      ti aiuta a riconoscere rischi, evitare trappole e scegliere con lucidità —
+      senza giudizio, senza manipolazioni, senza giochi nascosti.
+      <span class="tagline" id="tagline"></span>
+    </p>
+
+    <div class="heroRow">
+      <div class="card betaCard hoverFx">
+        <h3>Entra nella beta privata</h3>
+        <p>Lascia la tua email. Ti invieremo l’accesso appena apriamo i primi posti.</p>
+
+        <form class="emailBox" id="waitlistForm">
+          <input id="email" type="email" placeholder="La tua email" required />
+          <input id="usecase" type="text" placeholder="In quale situazione ti serve? (opzionale)" />
+          <button class="btn" type="submit">Unisciti alla lista</button>
+        </form>
+        <div class="subNote" id="formMsg">Privacy-first: useremo la tua email solo per la beta.</div>
+      </div>
+
+      <div class="card mascotWrap hoverFx">
+        <div class="mascotGlow"></div>
+        <div class="mascotTitle">Ecco Aegis 🛡️</div>
+        <p class="mascotDesc">Calmo, chiaro, affidabile. Ti avvisa quando qualcosa non torna e ti spiega il perché.</p>
+        <img class="mascotImg" src="./assets/mascot.png" alt="Aegis mascot">
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2 class="sectionTitle">Come funziona</h2>
+    <p class="sectionLead">Semplice, veloce, umano. Tu resti al comando.</p>
+
+    <div class="grid3">
+      <div class="mini hoverFx"><h4>1) Incolla</h4><p>Un link o una situazione: in pochi secondi hai chiarezza.</p></div>
+      <div class="mini hoverFx"><h4>2) Analizza</h4><p>Controlli e segnali per evitare trappole e abusi.</p></div>
+      <div class="mini hoverFx"><h4>3) Protegge</h4><p>Azioni consigliate, spiegate bene. Senza panico.</p></div>
+    </div>
+  </section>
+
+  <section id="security">
+    <h2 class="sectionTitle">Sicurezza che senti davvero</h2>
+    <p class="sectionLead">Trasparenza, rispetto e protezione — senza invadere la tua privacy.</p>
+
+    <div class="split">
+      <div class="card hoverFx">
+        <div class="quote">“Niente manipolazione. Solo chiarezza.”</div>
+        <p class="qText">Aegis-GuardianAI è progettato per essere calmo, onesto e spiegabile.</p>
+      </div>
+      <div class="card hoverFx">
+        <div class="quote">Privacy-first</div>
+        <p class="qText">La lista d’attesa serve solo per invitarti alla beta. Minimizzazione dati.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="sectionTitle">Chi siamo & Missione</h2>
+    <p class="sectionLead">Un’AI “public-friendly” che rende Internet più sicuro e comprensibile.</p>
+
+    <div class="grid3">
+      <div class="mini hoverFx"><h4>Missione</h4><p>Meno ansia, più lucidità, decisioni migliori.</p></div>
+      <div class="mini hoverFx"><h4>Metodo</h4><p>Umano + AI: empatia, spiegazioni semplici, sicurezza by design.</p></div>
+      <div class="mini hoverFx"><h4>Perché</h4><p>La tecnologia deve servire la vita — non confonderla.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 class="sectionTitle">FAQ</h2>
+    <p class="sectionLead">Risposte chiare alle domande che contano.</p>
+
+    <div style="margin-top:26px;">
+      <details class="mini"><summary>Salvate i miei dati?</summary><p>No: per ora raccogliamo solo email e, se vuoi, una frase.</p></details>
+      <details class="mini"><summary>Quando esce la beta?</summary><p>Apriamo a piccoli gruppi. Ti scriveremo appena ci sono posti.</p></details>
+      <details class="mini"><summary>È adatto a famiglie?</summary><p>Sì: è progettato per essere calmo, comprensibile e “family-friendly”.</p></details>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2 class="sectionTitle">Entra nella lista d’attesa</h2>
+    <p class="sectionLead">Se vuoi più sicurezza e chiarezza online — sei nel posto giusto.</p>
+
+    <div class="joinGrid">
+      <div class="card joinLeft hoverFx">
+        <h3 style="margin:0 0 10px; font-weight:990;">Richiedi accesso</h3>
+        <p style="margin:0 0 14px; color:var(--muted); font-weight:770; line-height:1.6;">
+          Lascia la tua email. Ti contattiamo appena apriamo nuovi posti in beta.
+        </p>
+
+        <form class="emailBox" id="waitlistForm2" style="justify-content:flex-start;">
+          <input id="email2" type="email" placeholder="La tua email" required />
+          <input id="usecase2" type="text" placeholder="In quale situazione ti serve? (opzionale)" />
+          <button class="btn" type="submit">Richiedi accesso</button>
+        </form>
+
+        <div class="subNote" id="formMsg2">Aggiornamenti essenziali + invito beta. Niente spam.</div>
+      </div>
+
+      <div class="card joinRight hoverFx">
+        <h3 style="margin:0 0 10px; font-weight:990;">Perché fidarti</h3>
+        <div class="miniTrust">✅ Privacy-first: niente vendita dati</div>
+        <div class="miniTrust">✅ Human-first: tono calmo e chiaro</div>
+        <div class="miniTrust">✅ Trasparenza: niente “magie”, solo spiegazioni</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Aegis-GuardianAI © 2026 — Creato con etica, visione e responsabilità.
+  </footer>
+
+  <script>
+    // ====== YOUR GOOGLE FORMS ======
+    const FORM_PUBLIC_URL = "https://docs.google.com/forms/d/e/1FAIpQLSemWBEYm-n6oSh0CGsA7HALHf2O86HNl29uxxemn_NBoycttQ/viewform?usp=dialog";
+    const PREFILL_FORMRESPONSE_URL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSemWBEYm-n6oSh0CGsA7HALHf2O86HNl29uxxemn_NBoycttQ/formResponse?usp=pp_url&entry.1137067838=test.test@gmail.com&entry.1887625619=mi+protegga+dai+link+che+mi+rubano+soldi+";
+
+    // Theme
+    const body = document.body;
+    const btn = document.getElementById('themeBtn');
+    const icon = document.getElementById('themeIcon');
+    const text = document.getElementById('themeText');
+    function applyTheme(theme){
+      body.setAttribute('data-theme', theme);
+      const isLight = theme === 'light';
+      icon.textContent = isLight ? '☀️' : '🌙';
+      text.textContent = isLight ? 'Light' : 'Dark';
+      localStorage.setItem('aegis_theme', theme);
+    }
+    applyTheme(localStorage.getItem('aegis_theme') || 'dark');
+    btn.addEventListener('click', () => {
+      const current = body.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Background parallax (light)
+    let raf = null;
+    window.addEventListener('mousemove', (e) => {
+      if(raf) return;
+      raf = requestAnimationFrame(() => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 24;
+        const y = (e.clientY / window.innerHeight - 0.5) * 24;
+        document.documentElement.style.setProperty('--mx', x.toFixed(2) + 'px');
+        document.documentElement.style.setProperty('--my', y.toFixed(2) + 'px');
+        raf = null;
+      });
+    });
+
+    // Tagline rotation
+    const tagline = document.getElementById('tagline');
+    const lines = [
+      "Un’AI che ti rispetta. Sempre.",
+      "Chiarezza prima di tutto.",
+      "Protezione senza paura.",
+      "Tu al centro, non l’algoritmo."
+    ];
+    let i = 0;
+    function setTag(){
+      if(!tagline) return;
+      tagline.style.opacity = 0;
+      setTimeout(() => {
+        tagline.textContent = lines[i % lines.length];
+        tagline.style.opacity = 1;
+        i++;
+      }, 220);
+    }
+    setTag();
+    setInterval(setTag, 4200);
+
+    // Nav active highlight
+    const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+    const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navLinks.forEach(a => a.classList.remove('active'));
+          const id = '#' + entry.target.id;
+          const active = navLinks.find(a => a.getAttribute('href') === id);
+          if(active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+    sections.forEach(s => obs.observe(s));
+
+    // Waitlist auto submit
+    function hasAutoUrl(){
+      return PREFILL_FORMRESPONSE_URL.includes("formResponse") && PREFILL_FORMRESPONSE_URL.includes("entry.");
+    }
+    function buildAutoUrl(email, usecase){
+      let url = PREFILL_FORMRESPONSE_URL;
+      url = url.replace(/(entry\.1137067838=)([^&]*)/i, `$1${encodeURIComponent(email)}`);
+      url = url.replace(/(entry\.1887625619=)([^&]*)/i, `$1${encodeURIComponent(usecase || "")}`);
+      return url;
+    }
+    function sendAuto(email, usecase){
+      const url = buildAutoUrl(email, usecase);
+      const ifr = document.createElement("iframe");
+      ifr.style.display = "none";
+      ifr.src = url;
+      document.body.appendChild(ifr);
+      setTimeout(() => { try { ifr.remove(); } catch(e){} }, 4000);
+    }
+    function hookForm(formId, emailId, usecaseId, msgId){
+      const form = document.getElementById(formId);
+      const emailEl = document.getElementById(emailId);
+      const usecaseEl = document.getElementById(usecaseId);
+      const msg = document.getElementById(msgId);
+      if(!form || !emailEl || !msg) return;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = (emailEl.value || "").trim();
+        const usecase = usecaseEl ? (usecaseEl.value || "").trim() : "";
+        if(!email){
+          msg.textContent = "Inserisci una email valida.";
+          return;
+        }
+        msg.textContent = "Perfetto. Ti stiamo registrando… ✅";
+        if(hasAutoUrl()){
+          try{
+            sendAuto(email, usecase);
+            msg.textContent = "Perfetto. Sei dentro ✅ Ti scriveremo appena apriamo la beta.";
+            emailEl.value = "";
+            if(usecaseEl) usecaseEl.value = "";
+            return;
+          } catch(err){
+            console.error(err);
+          }
+        }
+        msg.textContent = "Quasi fatto ✅ si apre il modulo: invia per completare l’iscrizione.";
+        window.open(FORM_PUBLIC_URL, "_blank", "noopener,noreferrer");
+      });
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      hookForm("waitlistForm", "email", "usecase", "formMsg");
+      hookForm("waitlistForm2", "email2", "usecase2", "formMsg2");
+    });
+  </script>
+</body>
+</html>
