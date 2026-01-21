@@ -3,7 +3,7 @@
 A human-first AI concept for safer, clearer browsing.
 
 ## Live website
-https://guardianaiteam-ctrl.github.io/guardianai-site/
+https://guardianaiteam-ctrl.github.io/aegis-guardianai/
 
 ## What it is
 Aegis-GuardianAI is being built to help people feel safer online:
