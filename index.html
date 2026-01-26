@@ -449,6 +449,88 @@
       font-weight:770;
     }
 
+    /* ===== roadmap ===== */
+.roadmapWrap{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+}
+.roadmapItem{
+  padding:20px 20px 18px;
+  border-radius:18px;
+  background:var(--card);
+  border:1px solid var(--cardBorder);
+  box-shadow:0 22px 70px var(--shadow);
+}
+.roadmapTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.roadmapPhase{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid var(--chipBorder);
+  background:var(--chipBg);
+  font-weight:980;
+  font-size:12px;
+  color:var(--muted);
+}
+.roadmapWhen{
+  font-weight:900;
+  font-size:12px;
+  color:var(--muted2);
+}
+.roadmapTitle{
+  margin:0 0 8px;
+  font-size:16px;
+  font-weight:990;
+  letter-spacing:-0.2px;
+}
+.roadmapText{
+  margin:0 0 12px;
+  color:var(--muted);
+  line-height:1.65;
+  font-weight:760;
+  font-size:14px;
+}
+.roadmapChips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.roadmapChips .chip{
+  display:inline-block;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid var(--chipBorder);
+  background:var(--chipBg);
+  color:var(--muted);
+  font-weight:900;
+  font-size:12px;
+}
+.roadmapNote{
+  margin-top:16px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:var(--card2);
+  border:1px solid var(--cardBorder);
+  color:var(--muted);
+  font-weight:770;
+  line-height:1.6;
+}
+
+/* mobile */
+@media (max-width: 980px){
+  .roadmapWrap{ grid-template-columns:1fr; }
+}
+
     /* ===== mobile adjustments ===== */
     @media (max-width: 980px){
       section{ padding:74px 16px; scroll-margin-top: 102px; }
@@ -506,6 +588,7 @@
           <a href="#security">Sicurezza</a>
           <a href="#about">Chi siamo</a>
           <a href="#faq">FAQ</a>
+          <a href="#roadmap">Roadmap</a>
           <a href="#join">Entra</a>
         </nav>
 
@@ -623,6 +706,87 @@
       </details>
     </div>
   </section>
+
+  <section id="roadmap">
+  <h2 class="sectionTitle">Roadmap</h2>
+  <p class="sectionLead">
+    Costruiamo Aegis in modo responsabile: prima capiamo i pattern reali, poi li trasformiamo in un assistente IA utile nel momento critico.
+  </p>
+
+  <div class="roadmapWrap">
+    <div class="roadmapItem hoverFx">
+      <div class="roadmapTop">
+        <span class="roadmapPhase">Fase 1</span>
+        <span class="roadmapWhen">Adesso</span>
+      </div>
+      <h3 class="roadmapTitle">Raccolta casi & Pattern Aegis v1</h3>
+      <p class="roadmapText">
+        Stiamo catalogando truffe reali (telefono, WhatsApp, spoofing, narrative fraud) e formalizzando i pattern decisionali
+        che colpiscono anche persone competenti sotto pressione.
+      </p>
+      <div class="roadmapChips">
+        <span class="chip">Casi reali</span>
+        <span class="chip">Bias + pressione</span>
+        <span class="chip">Punto di non ritorno</span>
+      </div>
+    </div>
+
+    <div class="roadmapItem hoverFx">
+      <div class="roadmapTop">
+        <span class="roadmapPhase">Fase 2</span>
+        <span class="roadmapWhen">Prossime settimane</span>
+      </div>
+      <h3 class="roadmapTitle">Protocollo “STOP-3” + contenuti educativi</h3>
+      <p class="roadmapText">
+        Trasformiamo i pattern in un protocollo pratico (30–90 sec) per spezzare l’urgenza, cambiare canale e verificare
+        senza panico. Lo testiamo con feedback pubblico (Reddit) e casi raccolti.
+      </p>
+      <div class="roadmapChips">
+        <span class="chip">STOP-3</span>
+        <span class="chip">Test pubblico</span>
+        <span class="chip">Design human-first</span>
+      </div>
+    </div>
+
+    <div class="roadmapItem hoverFx">
+      <div class="roadmapTop">
+        <span class="roadmapPhase">Fase 3</span>
+        <span class="roadmapWhen">Beta privata</span>
+      </div>
+      <h3 class="roadmapTitle">MVP IA: Analisi + rischio + azione consigliata</h3>
+      <p class="roadmapText">
+        Prima versione dell’assistente: incolli una situazione e Aegis ti restituisce segnali, livello di rischio e azioni
+        consigliate (chiare e verificabili). La beta parte a piccoli gruppi dalla waitlist.
+      </p>
+      <div class="roadmapChips">
+        <span class="chip">Classificazione</span>
+        <span class="chip">Rischio</span>
+        <span class="chip">Azioni concrete</span>
+      </div>
+    </div>
+
+    <div class="roadmapItem hoverFx">
+      <div class="roadmapTop">
+        <span class="roadmapPhase">Fase 4</span>
+        <span class="roadmapWhen">Dopo la beta</span>
+      </div>
+      <h3 class="roadmapTitle">Prodotto v1: anti-truffa “in tempo reale”</h3>
+      <p class="roadmapText">
+        Raffiniamo Aegis con i dati reali: miglioriamo precisione, spiegazioni e interventi durante le truffe.
+        Privacy-first e minimizzazione dati restano principi non negoziabili.
+      </p>
+      <div class="roadmapChips">
+        <span class="chip">Iterazione</span>
+        <span class="chip">Privacy-first</span>
+        <span class="chip">Affidabilità</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="roadmapNote">
+    <strong>Nota:</strong> Aegis non chiederà mai OTP, password o accessi. Se qualcuno lo fa, è un segnale di frode.
+  </div>
+</section>
 
   <section id="join">
     <h2 class="sectionTitle">Entra nella lista d’attesa</h2>
@@ -816,5 +980,6 @@
   </script>
 </body>
 </html>
+
 
 
